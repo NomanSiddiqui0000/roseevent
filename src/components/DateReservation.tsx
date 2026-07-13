@@ -268,35 +268,35 @@ export default function DateReservation() {
             className={`lg:col-span-7 transition-all duration-1000 ${calendarVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
           >
-            <div className="bg-white/80 backdrop-blur-sm rounded-[24px] border border-accent/10 shadow-[0_8px_40px_rgba(0,0,0,0.04)] p-6 md:p-8 lg:p-10">
+            <div className="bg-white rounded-[20px] border border-accent/15 shadow-[0_12px_48px_rgba(0,0,0,0.06)] p-6 md:p-8 lg:p-10">
               {/* Availability header */}
               <AvailabilityHeader counts={counts} availRef={availRef} reservedRef={reservedRef} limitedRef={limitedRef} sectionVisible={sectionVisible} />
 
               {/* Month navigation */}
-              <div className="flex items-center justify-between mb-8 mt-6">
+              <div className="flex items-center justify-between mb-8 mt-8">
                 <button
                   onClick={goPrevMonth}
-                  className="group flex items-center justify-center w-10 h-10 rounded-full border border-accent/20 text-accent/60 hover:text-accent hover:border-accent hover:bg-accent/5 transition-all duration-300"
+                  className="group flex items-center justify-center w-11 h-11 rounded-full border border-accent/25 text-accent/70 hover:text-accent hover:border-accent hover:bg-accent/8 hover:shadow-[0_4px_12px_rgba(155,44,79,0.08)] transition-all duration-300"
                   aria-label="Previous month"
                 >
-                  <ChevronLeft size={20} className="transition-transform group-hover:-translate-x-0.5" />
+                  <ChevronLeft size={22} className="transition-transform group-hover:-translate-x-0.5" />
                 </button>
-                <h4 className="font-serif text-2xl md:text-3xl text-[#2D2D2D] tracking-[-0.3px] font-semibold">
+                <h4 className="font-serif text-3xl md:text-4xl text-[#1A1A1A] tracking-[-0.5px] font-bold">
                   {monthLabel}
                 </h4>
                 <button
                   onClick={goNextMonth}
-                  className="group flex items-center justify-center w-10 h-10 rounded-full border border-accent/20 text-accent/60 hover:text-accent hover:border-accent hover:bg-accent/5 transition-all duration-300"
+                  className="group flex items-center justify-center w-11 h-11 rounded-full border border-accent/25 text-accent/70 hover:text-accent hover:border-accent hover:bg-accent/8 hover:shadow-[0_4px_12px_rgba(155,44,79,0.08)] transition-all duration-300"
                   aria-label="Next month"
                 >
-                  <ChevronRight size={20} className="transition-transform group-hover:translate-x-0.5" />
+                  <ChevronRight size={22} className="transition-transform group-hover:translate-x-0.5" />
                 </button>
               </div>
 
               {/* Day headers */}
               <div className="grid grid-cols-7 mb-3">
                 {DAYS.map(d => (
-                  <div key={d} className="text-center font-sans text-[11px] md:text-xs font-semibold text-accent/60 tracking-[1.5px] uppercase py-2">
+                  <div key={d} className="text-center font-sans text-[12px] md:text-sm font-bold text-accent/80 tracking-[1.5px] uppercase py-2.5">
                     {d}
                   </div>
                 ))}
@@ -316,9 +316,9 @@ export default function DateReservation() {
                   {fullyBooked ? (
                     <FullyBookedState onNextMonth={goToNextAvailableMonth} />
                   ) : (
-                    <div className="space-y-1">
+                    <div className="space-y-1.5">
                       {weeks.map((week, wi) => (
-                        <div key={wi} className="grid grid-cols-7 gap-1">
+                        <div key={wi} className="grid grid-cols-7 gap-1.5">
                           {week.map((cd, di) => (
                             <CalendarCell
                               key={`${wi}-${di}`}
@@ -336,10 +336,10 @@ export default function DateReservation() {
               </AnimatePresence>
 
               {/* Legend */}
-              <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-accent/10">
-                <LegendDot color="bg-accent/10 border-accent/30" label="Reserved" />
-                <LegendDot color="bg-white border-accent/40" label="Available" />
-                <LegendDot color="bg-accent text-white" label="Selected" />
+              <div className="flex items-center justify-center gap-8 mt-6 pt-6 border-t border-accent/15">
+                <LegendDot color="bg-accent/[0.07] border-accent/30" label="Reserved" />
+                <LegendDot color="bg-white border-accent/40 shadow-[0_1px_3px_rgba(0,0,0,0.04)]" label="Available" />
+                <LegendDot color="bg-gradient-to-br from-accent to-[#7A1F3D] border-accent shadow-sm" label="Selected" />
               </div>
             </div>
           </div>
@@ -395,23 +395,23 @@ function CalendarCell({ cd, isSelected, onSelect, index }: { cd: CalendarDate; i
         onMouseLeave={() => setShowTooltip(false)}
         disabled={!isAvailable && !isLimited}
         className={`
-          relative w-full aspect-square rounded-[10px] flex items-center justify-center
-          font-sans text-sm font-medium transition-all duration-[400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)]
-          ${!cd.isCurrentMonth ? 'text-gray-200 cursor-default' : ''}
-          ${isPast ? 'text-gray-300 cursor-default bg-transparent' : ''}
-          ${isReserved ? 'bg-accent/10 text-accent/70 cursor-default border border-accent/20' : ''}
-          ${isLimited ? 'bg-amber-50/80 text-amber-800/60 cursor-pointer border border-amber-200/50 hover:border-amber-300 hover:shadow-[0_4px_16px_rgba(251,191,36,0.15)]' : ''}
-          ${isAvailable && !isSelected ? 'bg-white text-[#2D2D2D] border border-accent/20 hover:border-accent hover:shadow-[0_8px_24px_rgba(155,44,79,0.12)] hover:-translate-y-0.5 cursor-pointer' : ''}
-          ${isSelected ? 'bg-accent text-white border-accent shadow-[0_8px_24px_rgba(155,44,79,0.25)]' : ''}
-          ${cd.isToday && !isSelected ? 'ring-2 ring-amber-400/40 ring-offset-1' : ''}
+          relative w-full aspect-square rounded-[12px] flex items-center justify-center
+          font-sans text-sm md:text-base font-medium transition-all duration-[300ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)]
+          ${!cd.isCurrentMonth ? 'text-gray-300 cursor-default' : ''}
+          ${isPast ? 'text-gray-400 cursor-default bg-transparent' : ''}
+          ${isReserved ? 'bg-accent/[0.07] text-accent/60 cursor-default border border-accent/15' : ''}
+          ${isLimited ? 'bg-amber-50/80 text-amber-800/70 cursor-pointer border border-amber-200/60 hover:border-amber-300 hover:shadow-[0_4px_16px_rgba(251,191,36,0.15)]' : ''}
+          ${isAvailable && !isSelected ? 'bg-white text-[#1A1A1A] border border-accent/25 hover:border-accent hover:shadow-[0_8px_28px_rgba(155,44,79,0.15)] hover:-translate-y-1 cursor-pointer' : ''}
+          ${isSelected ? 'bg-gradient-to-br from-accent to-[#7A1F3D] text-white border-accent shadow-[0_8px_32px_rgba(155,44,79,0.35)] ring-2 ring-accent/20' : ''}
+          ${cd.isToday && !isSelected ? 'ring-2 ring-amber-400/50 ring-offset-1' : ''}
         `}
         style={{ animationDelay: `${index * 30}ms`, animation: 'staggerFadeUp 0.5s ease-out forwards', opacity: 0 }}
       >
-        <span className={`relative z-10 ${isSelected ? 'font-semibold' : ''}`}>{cd.day}</span>
+        <span className={`relative z-10 text-sm md:text-base ${isSelected ? 'font-bold' : 'font-medium'}`}>{cd.day}</span>
 
         {/* Popular badge */}
         {isPopular && (
-          <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-accent/70" />
+          <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-accent shadow-[0_1px_4px_rgba(155,44,79,0.3)]" />
         )}
 
         {/* Lock icon for reserved */}
@@ -427,14 +427,14 @@ function CalendarCell({ cd, isSelected, onSelect, index }: { cd: CalendarDate; i
 
       {/* Tooltip */}
       {showTooltip && (
-        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-30 pointer-events-none" onMouseEnter={() => setShowTooltip(false)}>
-          <div className="bg-white shadow-[0_8px_24px_rgba(0,0,0,0.10)] rounded-lg px-3 py-2 text-center border border-accent/10 whitespace-nowrap">
-            <p className="font-sans text-[11px] font-semibold text-accent tracking-wide uppercase">Available</p>
-            {isPopular && <p className="font-sans text-[10px] text-amber-600/70 mt-0.5">Popular date</p>}
-            {cd.isToday && <p className="font-sans text-[10px] text-amber-600/70 mt-0.5">Today</p>}
-            {isLimited && <p className="font-sans text-[10px] text-amber-600/70 mt-0.5">Limited slots</p>}
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 z-30 pointer-events-none" onMouseEnter={() => setShowTooltip(false)}>
+          <div className="bg-white shadow-[0_8px_24px_rgba(0,0,0,0.12)] rounded-[10px] px-4 py-2.5 text-center border border-accent/10 whitespace-nowrap">
+            <p className="font-sans text-xs font-bold text-accent tracking-wide uppercase">Available</p>
+            {isPopular && <p className="font-sans text-[11px] text-amber-600/80 mt-0.5 font-medium">Popular date</p>}
+            {cd.isToday && <p className="font-sans text-[11px] text-amber-600/80 mt-0.5 font-medium">Today</p>}
+            {isLimited && <p className="font-sans text-[11px] text-amber-600/80 mt-0.5 font-medium">Limited slots</p>}
           </div>
-          <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-white border-l border-b border-accent/10 rotate-45 -mt-1" />
+          <div className="absolute top-full left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white border-l border-b border-accent/10 rotate-45 -mt-[3px]" />
         </div>
       )}
     </div>
@@ -452,20 +452,20 @@ function AvailabilityHeader({ counts, availRef, reservedRef, limitedRef, section
   sectionVisible: boolean;
 }) {
   return (
-    <div className="flex items-center justify-center gap-6 md:gap-10 pb-6 border-b border-accent/10">
+    <div className="flex items-center justify-center gap-8 md:gap-12 pb-7 border-b border-accent/15">
       <div className="text-center">
-        <span ref={availRef} className="font-serif text-2xl md:text-3xl font-bold text-emerald-600/70">{sectionVisible ? counts.available : 0}</span>
-        <p className="font-sans text-[10px] md:text-[11px] text-gray-500 tracking-[1px] uppercase mt-1">Available</p>
+        <span ref={availRef} className="font-serif text-3xl md:text-4xl font-bold text-emerald-700">{sectionVisible ? counts.available : 0}</span>
+        <p className="font-sans text-[11px] md:text-xs font-semibold text-gray-600 tracking-[1px] uppercase mt-1.5">Available</p>
       </div>
-      <div className="w-px h-10 bg-accent/15" />
+      <div className="w-px h-12 bg-accent/20" />
       <div className="text-center">
-        <span ref={limitedRef} className="font-serif text-2xl md:text-3xl font-bold text-amber-600/60">{sectionVisible ? counts.limited : 0}</span>
-        <p className="font-sans text-[10px] md:text-[11px] text-gray-500 tracking-[1px] uppercase mt-1">Limited</p>
+        <span ref={limitedRef} className="font-serif text-3xl md:text-4xl font-bold text-amber-700">{sectionVisible ? counts.limited : 0}</span>
+        <p className="font-sans text-[11px] md:text-xs font-semibold text-gray-600 tracking-[1px] uppercase mt-1.5">Limited</p>
       </div>
-      <div className="w-px h-10 bg-accent/15" />
+      <div className="w-px h-12 bg-accent/20" />
       <div className="text-center">
-        <span ref={reservedRef} className="font-serif text-2xl md:text-3xl font-bold text-accent/50">{sectionVisible ? counts.reserved : 0}</span>
-        <p className="font-sans text-[10px] md:text-[11px] text-gray-500 tracking-[1px] uppercase mt-1">Reserved</p>
+        <span ref={reservedRef} className="font-serif text-3xl md:text-4xl font-bold text-accent/70">{sectionVisible ? counts.reserved : 0}</span>
+        <p className="font-sans text-[11px] md:text-xs font-semibold text-gray-600 tracking-[1px] uppercase mt-1.5">Reserved</p>
       </div>
     </div>
   );
@@ -477,11 +477,11 @@ function AvailabilityHeader({ counts, availRef, reservedRef, limitedRef, section
 function FullyBookedState({ onNextMonth }: { onNextMonth: () => void }) {
   return (
     <div className="py-16 text-center">
-      <div className="w-16 h-16 rounded-full bg-accent/5 flex items-center justify-center mx-auto mb-6">
-        <Lock size={28} className="text-accent/30" />
+      <div className="w-20 h-20 rounded-full bg-accent/[0.06] flex items-center justify-center mx-auto mb-7 shadow-[0_4px_16px_rgba(155,44,79,0.06)]">
+        <Lock size={32} className="text-accent/40" />
       </div>
-      <h4 className="font-serif text-2xl text-[#2D2D2D] mb-2">Fully Reserved</h4>
-      <p className="font-sans text-sm text-gray-500 max-w-xs mx-auto mb-6">
+      <h4 className="font-serif text-3xl text-[#2D2D2D] font-semibold mb-3">Fully Reserved</h4>
+      <p className="font-sans text-sm text-gray-500 max-w-xs mx-auto mb-7">
         This month is fully reserved. Explore our next available dates.
       </p>
       <button
@@ -514,34 +514,34 @@ function BookingPanel({ selectedDate, booking, step, maxStep, loading, direction
   return (
     <div
       ref={ref}
-      className={`bg-white/80 backdrop-blur-sm rounded-[24px] border border-accent/10 shadow-[0_8px_40px_rgba(0,0,0,0.04)] p-6 md:p-8 lg:p-10 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      className={`bg-white rounded-[20px] border border-accent/15 shadow-[0_12px_48px_rgba(0,0,0,0.06)] p-6 md:p-8 lg:p-10 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}
     >
       {!selectedDate ? (
         /* Empty state */
-        <div className="text-center py-8">
-          <div className="w-16 h-16 rounded-full bg-accent/5 flex items-center justify-center mx-auto mb-6">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9B2C4F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <div className="text-center py-10">
+          <div className="w-20 h-20 rounded-full bg-accent/[0.06] flex items-center justify-center mx-auto mb-7 shadow-[0_4px_16px_rgba(155,44,79,0.06)]">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9B2C4F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
               <line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
             </svg>
           </div>
-          <h4 className="font-serif text-2xl text-[#2D2D2D] mb-2">Select a Date</h4>
-          <p className="font-sans text-sm text-gray-500 leading-relaxed">
+          <h4 className="font-serif text-3xl md:text-4xl text-[#2D2D2D] font-semibold mb-3">Select a Date</h4>
+          <p className="font-sans text-sm text-gray-500 leading-relaxed max-w-xs mx-auto">
             Choose an available date from the calendar to begin your reservation.
           </p>
         </div>
       ) : (
         <form onSubmit={onSubmit}>
           {/* Selected date display */}
-          <div className="text-center pb-6 border-b border-accent/10 mb-6">
-            <p className="font-sans text-xs text-accent/60 tracking-[2px] uppercase font-semibold mb-1">
+          <div className="text-center pb-7 border-b border-accent/15 mb-7">
+            <p className="font-sans text-xs text-accent tracking-[2px] uppercase font-bold mb-1.5">
               {selectedDate.toLocaleDateString('en-US', { weekday: 'long' })}
             </p>
-            <h3 className="font-serif text-3xl md:text-4xl text-[#2D2D2D] font-semibold tracking-[-0.3px]">
+            <h3 className="font-serif text-4xl md:text-5xl text-[#1A1A1A] font-bold tracking-[-0.5px] leading-tight">
               {selectedDate.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
             </h3>
-            <div className="w-12 h-px bg-accent/30 mx-auto mt-4" />
+            <div className="w-16 h-px bg-accent/40 mx-auto mt-5" />
           </div>
 
           {/* Step progress indicator */}
@@ -554,13 +554,13 @@ function BookingPanel({ selectedDate, booking, step, maxStep, loading, direction
                     type="button"
                     onClick={() => s <= maxStep && onAdvance(s)}
                     disabled={s > maxStep}
-                    className={`w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold font-sans transition-all duration-300 ${s < step ? 'bg-accent text-white' : s === step ? 'bg-accent text-white ring-2 ring-accent/25' : 'bg-gray-100 text-gray-400'
+                    className={`w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold font-sans transition-all duration-300 ${s < step ? 'bg-accent text-white shadow-[0_2px_8px_rgba(155,44,79,0.2)]' : s === step ? 'bg-accent text-white ring-2 ring-accent/30 shadow-[0_2px_8px_rgba(155,44,79,0.2)]' : 'bg-gray-100 text-gray-400'
                       } ${s > maxStep ? 'cursor-default' : 'cursor-pointer'}`}
                   >
                     {s < step ? <CheckCircle size={12} /> : s}
                   </button>
                   {i < STEP_LABELS.length - 1 && (
-                    <div className={`w-5 h-px mx-1 transition-all duration-300 ${s <= step ? 'bg-accent/40' : 'bg-gray-200'}`} />
+                    <div className={`w-6 h-px mx-1.5 transition-all duration-300 ${s <= step ? 'bg-accent/50' : 'bg-gray-200'}`} />
                   )}
                 </div>
               );
@@ -590,7 +590,7 @@ function BookingPanel({ selectedDate, booking, step, maxStep, loading, direction
                         onClick={() => { onUpdate('eventType', et); onAdvance(2); }}
                         className={`py-4 px-4 rounded-[12px] font-sans text-sm font-semibold tracking-wide transition-all duration-300 ${booking.eventType === et
                             ? 'bg-accent text-white shadow-md ring-2 ring-accent/30'
-                            : 'bg-accent/[0.04] text-gray-700 border border-accent/10 hover:border-accent/40 hover:bg-accent/[0.06] hover:-translate-y-0.5 hover:shadow-md'
+                            : 'bg-accent/[0.04] text-[#1A1A1A] border border-accent/15 hover:border-accent/40 hover:bg-accent/[0.06] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(155,44,79,0.08)]'
                           }`}
                       >
                         {et}
@@ -659,7 +659,7 @@ function BookingPanel({ selectedDate, booking, step, maxStep, loading, direction
                         onClick={() => { onUpdate('budget', b); onAdvance(4); }}
                         className={`py-4 px-4 rounded-[12px] font-sans text-sm font-semibold tracking-wide transition-all duration-300 ${booking.budget === b
                             ? 'bg-accent text-white shadow-md ring-2 ring-accent/30'
-                            : 'bg-accent/[0.04] text-gray-700 border border-accent/10 hover:border-accent/40 hover:bg-accent/[0.06] hover:-translate-y-0.5 hover:shadow-md'
+                            : 'bg-accent/[0.04] text-[#1A1A1A] border border-accent/15 hover:border-accent/40 hover:bg-accent/[0.06] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(155,44,79,0.08)]'
                           }`}
                       >
                         {b}
@@ -681,7 +681,7 @@ function BookingPanel({ selectedDate, booking, step, maxStep, loading, direction
                         onClick={() => { onUpdate('venue', v); onAdvance(5); }}
                         className={`py-4 px-4 rounded-[12px] font-sans text-sm font-semibold tracking-wide transition-all duration-300 ${booking.venue === v
                             ? 'bg-accent text-white shadow-md ring-2 ring-accent/30'
-                            : 'bg-accent/[0.04] text-gray-700 border border-accent/10 hover:border-accent/40 hover:bg-accent/[0.06] hover:-translate-y-0.5 hover:shadow-md'
+                            : 'bg-accent/[0.04] text-[#1A1A1A] border border-accent/15 hover:border-accent/40 hover:bg-accent/[0.06] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(155,44,79,0.08)]'
                           }`}
                       >
                         {v}
@@ -708,8 +708,8 @@ function BookingPanel({ selectedDate, booking, step, maxStep, loading, direction
           </AnimatePresence>
 
           {/* Booking Summary */}
-          <div className="mt-6 pt-6 border-t border-accent/10">
-            <div className="space-y-2 mb-6">
+          <div className="mt-7 pt-7 border-t border-accent/15">
+            <div className="space-y-3 mb-6">
               <SummaryRow label="Date" value={booking.date ? new Date(booking.date + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) : '—'} />
               <SummaryRow label="Event" value={booking.eventType || '—'} />
               <SummaryRow label="Guests" value={booking.guests || '—'} />
@@ -725,7 +725,7 @@ function BookingPanel({ selectedDate, booking, step, maxStep, loading, direction
               type="submit"
               disabled={!isComplete || loading}
               className={`w-full py-5 rounded-[12px] font-sans font-bold text-xs tracking-[1.5px] uppercase transition-all duration-500 relative overflow-hidden ${isComplete && !loading
-                  ? 'bg-accent text-white shadow-[0_8px_24px_rgba(155,44,79,0.25)] hover:bg-accent-dark hover:-translate-y-0.5 cursor-pointer'
+                  ? 'bg-gradient-to-r from-accent to-[#8A2745] text-white shadow-[0_8px_28px_rgba(155,44,79,0.30)] hover:shadow-[0_12px_36px_rgba(155,44,79,0.40)] hover:-translate-y-0.5 cursor-pointer'
                   : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                 }`}
             >
@@ -747,9 +747,9 @@ function BookingPanel({ selectedDate, booking, step, maxStep, loading, direction
 
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between">
-      <span className="font-sans text-xs text-gray-500 tracking-wide">{label}</span>
-      <span className="font-sans text-xs font-semibold text-[#2D2D2D]">{value}</span>
+    <div className="flex items-center justify-between py-1">
+      <span className="font-sans text-xs font-medium text-gray-600 tracking-wide">{label}</span>
+      <span className="font-sans text-sm font-bold text-[#1A1A1A]">{value}</span>
     </div>
   );
 }
@@ -769,7 +769,7 @@ function SuccessScreen({ onReset }: { onReset: () => void }) {
   return (
     <div
       ref={ref}
-      className={`bg-white/80 backdrop-blur-sm rounded-[24px] border border-accent/10 shadow-[0_8px_40px_rgba(0,0,0,0.04)] p-8 md:p-10 text-center transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      className={`bg-white rounded-[20px] border border-accent/15 shadow-[0_12px_48px_rgba(0,0,0,0.06)] p-8 md:p-10 text-center transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}
     >
       {/* Animated success icon */}
@@ -846,9 +846,9 @@ function SuccessScreen({ onReset }: { onReset: () => void }) {
    ════════════════════════════════════════════ */
 function LegendDot({ color, label }: { color: string; label: string }) {
   return (
-    <div className="flex items-center gap-2">
-      <div className={`w-3 h-3 rounded-[4px] border ${color}`} />
-      <span className="font-sans text-[10px] text-gray-500 tracking-[0.5px]">{label}</span>
+    <div className="flex items-center gap-2.5">
+      <div className={`w-4 h-4 rounded-[4px] border ${color}`} />
+      <span className="font-sans text-xs font-semibold text-gray-600 tracking-[0.5px]">{label}</span>
     </div>
   );
 }
