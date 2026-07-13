@@ -17,7 +17,7 @@ const contacts = [
   {
     icon: Mail,
     label: 'Email',
-    href: 'mailto:hello@luxeevents.com',
+    href: 'mailto:hello@roseevents.com',
     color: '#9B2C4F',
   },
   {

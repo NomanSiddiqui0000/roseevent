@@ -1,4 +1,4 @@
-# Luxe Events
+# Rose Events
 
 Premium Event Management & Luxury Wedding Planning platform.
 

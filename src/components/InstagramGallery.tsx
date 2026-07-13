@@ -105,7 +105,7 @@ export default function InstagramGallery() {
             className="group inline-flex items-center gap-3 px-8 py-4 bg-accent text-white font-sans font-bold tracking-[1.5px] uppercase text-sm rounded-[10px] transition-all duration-300 hover:bg-accent-dark hover:shadow-luxury hover:-translate-y-0.5"
           >
             <InstagramIcon size={18} className="transition-transform duration-300 group-hover:scale-110" />
-            Follow @luxeevents
+            Follow @roseevents
           </a>
         </div>
       </div>

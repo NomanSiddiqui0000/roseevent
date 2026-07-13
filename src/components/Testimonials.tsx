@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     event: 'Luxury Wedding',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    quote: 'Luxe Events transformed our dream wedding into reality. Every detail was perfect, from the stunning floral arrangements to the seamless coordination. Our guests are still talking about it months later.',
+    quote: 'Rose Events transformed our dream wedding into reality. Every detail was perfect, from the stunning floral arrangements to the seamless coordination. Our guests are still talking about it months later.',
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
     event: 'Destination Wedding',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    quote: 'Working with Luxe Events was an absolute pleasure. They handled every logistics of our destination wedding with such professionalism and grace. We cannot imagine our big day without them.',
+    quote: 'Working with Rose Events was an absolute pleasure. They handled every logistics of our destination wedding with such professionalism and grace. We cannot imagine our big day without them.',
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const testimonials: Testimonial[] = [
     event: 'Corporate Gala',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    quote: 'For our annual corporate gala, Luxe Events delivered beyond expectations. The sophisticated ambiance and flawless execution impressed our 500+ guests immensely.',
+    quote: 'For our annual corporate gala, Rose Events delivered beyond expectations. The sophisticated ambiance and flawless execution impressed our 500+ guests immensely.',
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ const testimonials: Testimonial[] = [
     event: 'Luxury Decor Client',
     image: 'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    quote: "The decor Luxe Events designed for our reception was nothing short of breathtaking. Every element felt intentional, luxurious, and uniquely ours. We were genuinely moved.",
+    quote: "The decor Rose Events designed for our reception was nothing short of breathtaking. Every element felt intentional, luxurious, and uniquely ours. We were genuinely moved.",
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ const testimonials: Testimonial[] = [
     event: 'Birthday Celebration',
     image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    quote: "They turned my wife's 40th birthday into an unforgettable evening. From the venue styling to the live music, Luxe Events orchestrated a celebration beyond our imagination.",
+    quote: "They turned my wife's 40th birthday into an unforgettable evening. From the venue styling to the live music, Rose Events orchestrated a celebration beyond our imagination.",
   },
   {
     id: 8,

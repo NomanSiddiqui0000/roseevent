@@ -81,7 +81,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
               <span className="font-serif text-2xl font-semibold tracking-wider">
-                LUXE
+                ROSE
               </span>
               <span className="heading-script text-3xl text-accent">Events</span>
             </Link>
@@ -162,10 +162,10 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-accent" />
                 <a
-                  href="mailto:hello@luxeevents.com"
+                  href="mailto:hello@roseevents.com"
                   className="text-white/60 transition-colors hover:text-accent"
                 >
-                  hello@luxeevents.com
+                  hello@roseevents.com
                 </a>
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/40 text-sm">
-              &copy; {new Date().getFullYear()} Luxe Events. All rights reserved.
+              &copy; {new Date().getFullYear()} Rose Events. All rights reserved.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item, index) => (

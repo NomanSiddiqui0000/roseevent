@@ -66,7 +66,7 @@ export default function About() {
               <span className="block text-accent mt-2">Unforgettable Moments</span>
             </h3>
             <p className="mb-6">
-              At Luxe Events, we believe every celebration is a canvas for creativity and elegance.
+              At Rose Events, we believe every celebration is a canvas for creativity and elegance.
               With over a decade of experience in luxury event planning, our passionate team
               transforms your vision into breathtaking realities.
             </p>

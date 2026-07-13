@@ -43,7 +43,7 @@ export default function Instagram() {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <InstagramIcon size={28} className="text-accent" />
-            <span className="font-serif text-xl tracking-wide">@luxeevents</span>
+            <span className="font-serif text-xl tracking-wide">@roseevents</span>
           </div>
           <p className="font-sans text-gray-600">Follow our journey for daily inspiration</p>
         </div>

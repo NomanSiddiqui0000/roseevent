@@ -50,7 +50,7 @@ export const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80',
     paragraphs: [
-      'A wedding is the most cherished milestone of a lifetime, and we believe it deserves to be nothing short of extraordinary. At Luxe Events, we orchestrate luxury weddings that blend romance, heritage, and refined artistry into a single unforgettable day. From the first consultation to the final toast, every detail is planned with intention and styled with sophistication.',
+      'A wedding is the most cherished milestone of a lifetime, and we believe it deserves to be nothing short of extraordinary. At Rose Events, we orchestrate luxury weddings that blend romance, heritage, and refined artistry into a single unforgettable day. From the first consultation to the final toast, every detail is planned with intention and styled with sophistication.',
       'Our planning process begins with listening. We take time to understand your love story, your family traditions, and the atmosphere you envision. We then translate that vision into a cohesive design language — from color palettes and floral arches to stationery, lighting, and tablescapes — ensuring every element speaks to who you are as a couple.',
       'We collaborate with the finest venues, photographers, florists, and couture designers to bring your dreams to life. Whether you imagine a candlelit cathedral ceremony, a sun-drenched garden union, or a black-tie ballroom reception, our team has the experience and network to make it seamlessly possible.',
       'Personalization is at the heart of our philosophy. No two weddings we plan are ever alike. We weave your culture, faith, language, and personal taste into every touchpoint — making the celebration feel unmistakably yours. Our clients return to us because they trust that their most precious day will be handled with discretion, warmth, and uncompromising quality.',
@@ -114,7 +114,7 @@ export const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80',
     paragraphs: [
-      'Mehndi and Barat celebrations hold a sacred place in the heart of South Asian weddings — they are days of color, music, family, and ritual that span generations. At Luxe Events, we honor these traditions while elevating them with contemporary luxury, creating moments that are both culturally authentic and visually breathtaking.',
+      'Mehndi and Barat celebrations hold a sacred place in the heart of South Asian weddings — they are days of color, music, family, and ritual that span generations. At Rose Events, we honor these traditions while elevating them with contemporary luxury, creating moments that are both culturally authentic and visually breathtaking.',
       'Our team is fluent in the nuanced customs of Mehndi and Barat — from the rhythm of the dholak and the placement of the mandap, to the choreography of the baraat procession and the precise timing of the rukhsati. We coordinate with families, decorators, and clergy to ensure every ceremony unfolds with the dignity it deserves.',
       'For the Mehndi, we design vibrant, festive environments — colorful drapes, hanging florals, henna lounges, and live music stages that invite joyful celebration. For the Barat, we orchestrate grand entrances, ornate mandaps, regal seating, and the seamless flow of rituals — all under the gaze of curated lighting and couture decor.',
       'We understand that these celebrations are deeply personal and often span multiple days. Our multi-day planning service ensures continuity across every event — a cohesive design thread that ties your Mehndi, Barat, and Walima together while letting each shine with its own personality.',
@@ -178,7 +178,7 @@ export const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80',
     paragraphs: [
-      'A reception is the moment your celebration truly comes alive — when family and friends gather to toast, dance, and create memories that linger for a lifetime. At Luxe Events, we design receptions that feel cinematic in their beauty and effortless in their execution.',
+      'A reception is the moment your celebration truly comes alive — when family and friends gather to toast, dance, and create memories that linger for a lifetime. At Rose Events, we design receptions that feel cinematic in their beauty and effortless in their execution.',
       'We approach each reception as a blank canvas. Our design team builds immersive environments — from candlelit dinner spaces and crystal installations to live performance stages and interactive food stations. Every element is choreographed to guide your guests through an evening of surprise, delight, and connection.',
       'Logistics, when done invisibly, are what make a reception feel effortless. We coordinate vendor timelines, sound checks, lighting cues, catering service, guest seating, and entertainment down to the minute — so the only thing you need to think about is enjoying your evening.',
       'Whether you envision a regal ballroom dinner for 800 or an intimate rooftop reception for 80, our team brings the same meticulous care. We tailor scale, mood, and pace to your vision, ensuring your reception feels as grand or as intimate as you desire.',
@@ -242,7 +242,7 @@ export const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80',
     paragraphs: [
-      'A milestone birthday is more than a party — it is a celebration of a life lived, the chapters written, and the people who helped shape them. At Luxe Events, we design birthday celebrations that honor the guest of honor with elegance, joy, and unforgettable surprise.',
+      'A milestone birthday is more than a party — it is a celebration of a life lived, the chapters written, and the people who helped shape them. At Rose Events, we design birthday celebrations that honor the guest of honor with elegance, joy, and unforgettable surprise.',
       'From sweet sixteens and thirtieth soirées to fiftieth jubilees and eightieth family reunions, we tailor every element to the person being celebrated. We discover their passions, travels, music, and memories — then weave those threads into the design of the evening.',
       'Our parties balance the festive with the refined. We create spaces where guests dance, dine, and mingle — but also where they pause, reflect, and feel moved. Live music, custom desserts, curated playlists, surprise performances, and personal video tributes are all part of our toolkit.',
       'For children and teens, we craft immersive themed experiences — from enchanted forest settings and circus-inspired carnivals to music festival recreations and black-tie junior galas. For adults, we lean into sophistication: cocktail receptions, plated dinners, and after-parties that last into the early hours.',
@@ -306,7 +306,7 @@ export const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80',
     paragraphs: [
-      'Corporate events are moments where brands meet their communities — employees, clients, partners, and press. At Luxe Events, we design corporate experiences that embody your brand values while creating memories that linger long after the event closes.',
+      'Corporate events are moments where brands meet their communities — employees, clients, partners, and press. At Rose Events, we design corporate experiences that embody your brand values while creating memories that linger long after the event closes.',
       'From annual galas, award ceremonies, and luxury product launches to conferences, brand activations, and leadership retreats, we offer end-to-end planning with discretion and precision. We align aesthetics, messaging, and logistics — so your event not only looks exceptional, but also delivers on your strategic goals.',
       'Our production team brings strong technical fluency. We handle stage design, AV engineering, lighting plots, livestreaming, simultaneous interpretation, registration, seating, signage, and attendee tracking — ensuring no detail is missed and every minute runs to plan.',
       'We collaborate closely with your marketing, HR, and leadership teams to ensure the event speaks your language. From keynote speaker care and VIP hospitality to branded environments and after-parties, every touchpoint is intentionally crafted to reflect your brand at its finest.',
@@ -370,7 +370,7 @@ export const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80',
     paragraphs: [
-      'An engagement ceremony is the prologue to your wedding story — the moment you and your partner make your promise known to family and friends. At Luxe Events, we craft intimate, intentional celebrations that honor the romance at the center of it all.',
+      'An engagement ceremony is the prologue to your wedding story — the moment you and your partner make your promise known to family and friends. At Rose Events, we craft intimate, intentional celebrations that honor the romance at the center of it all.',
       'We design engagement ceremonies that feel personal above all else. Whether you envision a surprise rooftop proposal, an intimate family blessing, or a grand engagement party with all your favorite people, we orchestrate every detail — from the moment the question is asked to the final dance of the evening.',
       'Our approach is romantic and editorial — soft florals, candlelit ambience, custom signage, and beautifully styled food and bars. We layer personal touches — your first song, your shared travels, photos from your relationship — into the decor so the celebration feels unmistakably yours.',
       'For couples planning destination engagements or surprise proposals, we handle travel logistics, confidential itineraries, secret vendor coordination, and discreet timing — so the only surprise is the one your partner experiences.',
@@ -434,7 +434,7 @@ export const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80',
     paragraphs: [
-      'Some of the most memorable celebrations are the most private — anniversaries at a beloved vacation home, intimate dinners with close friends, family reunions in a meaningful setting, or holiday gatherings that bring together the people who matter most. At Luxe Events, we design private parties that feel as personal as a handwritten letter.',
+      'Some of the most memorable celebrations are the most private — anniversaries at a beloved vacation home, intimate dinners with close friends, family reunions in a meaningful setting, or holiday gatherings that bring together the people who matter most. At Rose Events, we design private parties that feel as personal as a handwritten letter.',
       'We approach private events with discretion as our foundation. Whether you are hosting heads of state, public figures, or simply your nearest and dearest, we ensure every guest feels cared for and every detail remains confidential.',
       'Our styling for private parties ranges from understated elegance — candle and floral tablescapes, refined menus, soft background music — to immersive themed evenings with custom installations, performance art, and curated entertainment.',
       'We handle every logistical element — staffing, rentals, catering, valets, security, parking, and noise management — so you can be fully present with your guests from the moment they arrive.',

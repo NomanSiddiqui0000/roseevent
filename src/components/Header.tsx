@@ -55,7 +55,7 @@ export default function Header() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 flex-shrink-0" onClick={handleNavClick}>
               <span className={`font-serif text-2xl font-semibold tracking-wider transition-colors duration-300 ${isScrolled || isHomePage ? 'text-white' : 'text-black'}`}>
-                LUXE
+                ROSE
               </span>
               <span className="heading-script text-3xl text-accent">Events</span>
             </Link>
