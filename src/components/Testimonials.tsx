@@ -116,14 +116,32 @@ export default function Testimonials() {
   const [revealRef, revealed] = useScrollReveal<HTMLDivElement>();
   const touchStartX = useRef<number | null>(null);
   const [transition, setTransition] = useState(true);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [cardWidth, setCardWidth] = useState(0);
+  const gap = 28;
 
   const totalReal = testimonials.length;
   const extended = useMemo(
     () => [...testimonials, ...testimonials.slice(0, visible)],
     [visible]
   );
-  const totalTrackSlides = totalReal + 1;
   const totalPages = Math.ceil(totalReal / visible);
+
+  // Measure container and calculate pixel-perfect card width
+  useEffect(() => {
+    const measure = () => {
+      if (trackRef.current?.parentElement) {
+        const containerWidth = trackRef.current.parentElement.clientWidth;
+        const cw = (containerWidth - (visible - 1) * gap) / visible;
+        setCardWidth(Math.max(cw, 200));
+      }
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, [visible, gap]);
+
+  const advance = cardWidth + gap;
 
   // Clamp slideIndex on visible change
   useEffect(() => {
@@ -228,28 +246,32 @@ export default function Testimonials() {
 
         {/* ===== Carousel ===== */}
         <div className="relative overflow-hidden py-6 -mt-2">
-          {/* Track — slides one card position at a time for smooth flow */}
+          {/* Track — pixel-based one-card-at-a-time for precise spacing */}
           <div
+            ref={trackRef}
             className="flex will-change-transform"
             style={{
-              transform: `translateX(-${(slideIndex / visible) * 100}%)`,
+              transform: cardWidth ? `translateX(-${slideIndex * advance}px)` : 'translateX(0)',
               transition: transition
                 ? 'transform 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                 : 'none',
             }}
           >
-            {Array.from({ length: totalTrackSlides }).map((_, i) => (
-              <div key={i} className="w-full flex-shrink-0">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-                  {extended.slice(i, i + visible).map((t, idx) => (
-                    <TestimonialCard
-                      key={t.id}
-                      testimonial={t}
-                      animateIn={revealed}
-                      animDelay={idx * 80}
-                    />
-                  ))}
-                </div>
+            {extended.map((t, i) => (
+              <div
+                key={`${t.id}-${i}`}
+                className="flex-shrink-0"
+                style={{
+                  width: cardWidth ? `${cardWidth}px` : 'auto',
+                  minWidth: cardWidth ? `${cardWidth}px` : 'auto',
+                  marginRight: i < extended.length - 1 ? `${gap}px` : '0',
+                }}
+              >
+                <TestimonialCard
+                  testimonial={t}
+                  animateIn={revealed}
+                  animDelay={i * 60}
+                />
               </div>
             ))}
           </div>

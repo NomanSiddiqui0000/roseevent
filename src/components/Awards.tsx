@@ -28,14 +28,13 @@ export default function Awards() {
           {partners.map((item, index) => (
             <div
               key={index}
-              className="group flex flex-col items-center text-center p-8 rounded-2xl bg-white shadow-sm border border-gray-50 transition-all duration-400 hover:-translate-y-2 hover:shadow-card"
-              style={{ transitionDelay: `${index * 80}ms` }}
+              className="group flex flex-col items-center text-center p-9 md:p-10 rounded-2xl bg-white shadow-sm border border-gray-50 transition-[transform,box-shadow,border-color] duration-[400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-2 hover:shadow-[0_18px_50px_rgba(155,44,79,0.10)] hover:border-accent/30"
             >
-              <div className="w-14 h-14 rounded-full bg-accent/8 flex items-center justify-center mb-4 group-hover:bg-accent/12 transition-colors duration-400">
-                <item.icon size={22} className="text-accent" />
+              <div className="w-16 h-16 rounded-full bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent/12 transition-colors duration-400">
+                <item.icon size={24} className="text-accent" />
               </div>
-              <h4 className="font-serif text-base mb-1 tracking-[-0.2px]">{item.label}</h4>
-              <p className="font-sans text-xs text-gray-500 tracking-wide">{item.detail}</p>
+              <h4 className="font-serif text-lg md:text-xl font-semibold mb-1.5 tracking-[-0.3px]">{item.label}</h4>
+              <p className="font-sans text-sm font-medium text-gray-600 tracking-wide">{item.detail}</p>
             </div>
           ))}
         </div>
