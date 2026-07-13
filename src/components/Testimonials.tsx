@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 type Testimonial = {
   id: number;
@@ -217,19 +218,7 @@ export default function Testimonials() {
             revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <span className="label-luxury">Client Love</span>
-
-          {/* Heading with overlapping script word */}
-          <h2 className="relative font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-[#2D2D2D] leading-[1.1] tracking-[-1px] mt-5 mb-2">
-            What Our Clients Say
-          </h2>
-          <span
-            className="heading-script text-accent text-5xl md:text-6xl lg:text-7xl absolute left-1/2 -translate-x-1/2 -top-1 md:-top-2 pointer-events-none select-none"
-            style={{ opacity: 0.9 }}
-            aria-hidden
-          >
-            Love
-          </span>
+          <SectionHeading bgText="TESTIMONIALS" scriptText="Client Love" />
 
           <p className="font-sans text-[17px] md:text-[18px] text-[#666] leading-[1.9] max-w-2xl mx-auto mt-8">
             Every celebration tells a story, and nothing speaks louder than the words of our
@@ -238,7 +227,7 @@ export default function Testimonials() {
         </div>
 
         {/* ===== Carousel ===== */}
-        <div className="relative overflow-hidden pt-2 -mt-2">
+        <div className="relative overflow-hidden py-6 -mt-2">
           {/* Track — slides one card position at a time for smooth flow */}
           <div
             className="flex will-change-transform"
